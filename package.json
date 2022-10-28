@@ -1,7 +1,6 @@
 {
   "name": "smartcity",
   "version": "0.1.0",
-  "homepage": "https://sam-logs.github.io/gharelu-smart-city",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.4",
@@ -17,7 +16,6 @@
     "axios": "^1.1.3",
     "bootstrap": "^4.6.2",
     "css-minimizer-webpack-plugin": "^4.2.2",
-    "gh-pages": "^4.0.0",
     "heroicons-react": "^1.4.1",
     "node-sass": "^7.0.3",
     "postcss": "^8.4.18",
@@ -35,8 +33,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
