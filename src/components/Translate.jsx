@@ -93,7 +93,7 @@ const Translate = () => {
           });
     } , []);
   return(
-    <>
+    <><div className="body">
    <div className="conatainer">
     <div className="wrapper">
     <div className="text-input">
@@ -134,6 +134,7 @@ const Translate = () => {
     </ul>
     </div>
    <button id="button"> Translate Text</button>
+   </div>
    </div>
    </>
   );

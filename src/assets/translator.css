@@ -1,4 +1,11 @@
-
+.body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  height: 100vh;
+  background: aqua;
+}
 .conatainer{
     min-width: 700px;
     width: 100%;
