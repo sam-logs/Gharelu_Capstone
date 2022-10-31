@@ -1,78 +1,59 @@
-import React, {useState,useEffect} from "react";
-import {WiCelsius} from 'react-icons/wi'
+import React, { useState,useEffect } from "react";
 
-const TempApp = () =>
-{
 
-    const[ city, setCity] = useState(null);
-    const[ search, setSearch] = useState("");
-    useEffect(() => {
-        const fetchApi = async() =>
-        {
-            const url =`http://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=321f9ceb50e97fd8206ab2a8359510b6`;
-            const response = await fetch(url);
-            const resJson = await response.json();
-            setCity(resJson.main);
-        }
-        fetchApi();
-    },[search])
+function Weather(props) {
+  const [city, setcity] = useState("");
+  const [post, setPost] = useState("");
+  const [state, setState] = useState(false);
+  let access_token = "0653063a7b472ac20274d9bb8a70a80c";
+  let url = `http://api.weatherstack.com/current?access_key=${access_token}&query=${city}`;
 
-    return (
-        <div className="border-solid border-2 border-indigo-600 w-80 m-0">
-            <div className="InputData place-items-end flex justify-center m-0">
-                <input 
-                placeholder="search"
-                type="search"
-                className="InputField "
-                onChange = { (event) => {
-                    setSearch(event.target.value)
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    fetch(url)
+      .then((res) => res.json())
+      .then((json) => {
+        setPost(json);
+        setState(true)
+      });
+    console.log(post);
+    document.getElementById(
+      "textareaforwheather"
+    ).innerHTML = `${post.current.temperature}°C`;
+  };
 
-                }} />
-            {
-                !city?
-                (   <div>
-                  {/* <span> <h5><b>No Data Found</b></h5></span>  */}
-                    <div id="clouds">
-                <div class="cloud x1"></div>
-                <div class="cloud x2"></div>
-                <div class="cloud x3"></div>
-                <div class="cloud x4"></div>
-                <div class="cloud x5"></div>
+  useEffect(() => {
+    if (state) {
+      console.log(state);
+    }
+  }, [state]);
+
+  return (
+    <>
+    {/* bg-gradient-to-r from-violet-500 to-fuchsia-500 */}
+      <div className="card bg-[url('https://speckyboy.com/wp-content/uploads/2016/02/monthly-freebies-feb-2016-13.png')]">
+        
+        <form onSubmit={handleSubmit}>
+          <div className="form-group bg-transaprent w-60 h-36">
+            <label>
+              <strong>Know About Your Surroundings</strong>
+            </label><br/>
+            <div>
+              Temperature : <span id="textareaforwheather"></span>
             </div>
-            </div>
-                ) :
-                (
-                    <div>
-                    <div className="info">
-                    <h4 className="location">
-                    <i class="fas fa-street-view"></i>{search}
-                    </h4>
-                    <h5 className="temp">
-                    {city.temp }<WiCelsius />
-                    
-                    </h5>
-                </div>
-                <div className="wave- one"></div>
-                
-                <div className="wave- two"></div>
-                
-                <div className="wave- three"></div>
-                
-                <div id="clouds">
-                <div class="cloud x1"></div>
-                <div class="cloud x2"></div>
-                <div class="cloud x3"></div>
-                <div class="cloud x4"></div>
-                <div class="cloud x5"></div>
-            </div>
-            </div> 
-
-                )
-            }
-
-            </div> 
-        </div>
-    )
+            <div id="textareaforwheather"></div>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="city"
+              onChange={(e) => setcity(e.target.value)}
+            /><br/>
+            <button className="btn btn-primary">Get Temperature</button>
+          </div>
+        </form>
+      </div>
+    </>
+  );
 }
- 
-export default TempApp;
+
+export default Weather;

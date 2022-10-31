@@ -1,6 +1,6 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel';
-import House1 from "../assets/house1.jpg"
+
 
 
 const Notification = () => {
@@ -9,7 +9,7 @@ const Notification = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://wallpapercave.com/wp/wp4756961.jpg"
+          src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
           alt="First slide"
         />
         <Carousel.Caption>
@@ -20,7 +20,7 @@ const Notification = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://th.bing.com/th/id/R.84191af1371e1b85d50d0c3b2da27fcb?rik=UwzsMmZP5kG7sQ&riu=http%3a%2f%2fwww.aebackoffice.com%2fwp-content%2fuploads%2f2018%2f01%2fSmart-Cities.gif&ehk=QuxzTJ6WJ8eHmA%2fFB1bvZhVDDEQVzNXfKoKtPxHh4r4%3d&risl=&pid=ImgRaw&r=0"
+          src="https://images.unsplash.com/photo-1525935944571-4e99237764c9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80"
           alt="Second slide"
         />
 
@@ -32,7 +32,7 @@ const Notification = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={House1}
+          src="https://images.unsplash.com/photo-1499913039380-57a8c8afec80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
           alt="Third slide"
         />
 

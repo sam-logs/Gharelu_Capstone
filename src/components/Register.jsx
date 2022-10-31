@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { toast } from 'react-toastify';
+import Navbars from './Navbars';
 import { signUp } from './services/user.service';
 
 const Register = () => {
@@ -74,6 +75,8 @@ const Register = () => {
       });
   };
   return (
+    <section>
+    <Navbars/>
     <div className='flex flex-row justify-evenly bg-sky-200 items-center'>
       <img
         className="w-80 h-100 flex"
@@ -154,6 +157,7 @@ const Register = () => {
         </Button>
       </Form>
     </div>
+    </section>
   )
 }
 

@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 const Success = () => {
   return (
     <div>
-        <h1 className="notFoundTitle text-center">Thanks to Visit Our Page</h1>
+        <h1 className="text-center">Thanks to Visit Our Page</h1>
             <p className="mb-5 text-center">
                 Please Visit Again !! Bonjour
             </p>

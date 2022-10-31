@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import countries from "../data";
 import '../assets/translator.css'
+import Navbars from "./Navbars";
 
 const Translate = () => {
     useEffect(() => { 
@@ -93,7 +94,9 @@ const Translate = () => {
           });
     } , []);
   return(
-    <><div className="body">
+    <>
+    <Navbars/>
+    <div className="body">
    <div className="conatainer">
     <div className="wrapper">
     <div className="text-input">
