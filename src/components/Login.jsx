@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import  userContext  from './userContext'
 import { loginUser } from './services/user.service';
 import { doLogin } from './auth';
-import Portfolio from './Portfolio';
+import Navbars from './Navbars';
 
 
 
@@ -78,6 +78,7 @@ const handleFormSubmit = (event) => {
   return (
     <section id='login' className='h-100'>
       {/* <Portfolio/> */}
+      <Navbars/>
       {/* <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8"> */}
         <div className="w-full flex justify-center justify-items-center mt-5 min-h-full ">
           <div className='flex flex-row justify-around items-center mr-8'>

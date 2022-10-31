@@ -1,18 +1,21 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import userContext from './userContext'
+//import userContext from './userContext'
 import { isLoggedIn, getCurrentUserDetail } from './auth';
 import { doLogout } from './auth';
 import { CgProfile } from 'react-icons/cg'
+import { Link } from 'react-router-dom';
+import Dropdown from 'react-bootstrap/Dropdown';
+
 
 
 const Navbars = () => {
-  const userContextData = useContext(userContext)
+  // const userContextData = useContext(userContext)
   const [login, setLogin] = useState(false)
-  const [user, setUser] = useState(undefined)
+  const [user, setUser] = useState(null)
 
   useEffect(() => {
 
@@ -25,7 +28,7 @@ const Navbars = () => {
   const logout = () => {
     doLogout(() => {
       //logged out
-      // setLogin(false)
+      setLogin(false)
       // userContextData.setUser({
       //     data: null,
       //     login: false
@@ -43,26 +46,32 @@ const Navbars = () => {
         <Navbar.Brand href="/">GHARELU</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-          </Nav>
+
           <Nav className='ml-auto'>
             {
               login && (
                 <>
+                  <Nav className="me-auto">
+                    <Nav.Link href="/home">Home</Nav.Link>
+                  </Nav>
                   <Nav.Link href="#portfolio">Events</Nav.Link>
                   <NavDropdown title="Services" id="collasible-nav-dropdown">
-                    <NavDropdown.Item href="#">Transport</NavDropdown.Item>
+                    <NavDropdown.Item href="/transport">Transport</NavDropdown.Item>
                     <NavDropdown.Item href="/translator"> Translator</NavDropdown.Item>
-                    <NavDropdown.Item href="/alluser">Basic Aminities</NavDropdown.Item>
+                    <NavDropdown.Item href="/basic">Basic Aminities</NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="/user/:id">
-                      Separated link
-                    </NavDropdown.Item>
                   </NavDropdown>
-                  <Nav.Link >{user.email}</Nav.Link>
-                  <Nav.Link onClick={logout}>Logout</Nav.Link>
-                  <Nav.Link href='/profile-info' > <CgProfile /></Nav.Link>
+                  <Dropdown>
+                    <Dropdown.Toggle variant="info" id="dropdown-basic">
+                      <CgProfile />
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                      <Dropdown.Item >{user.email}</Dropdown.Item>
+                      <Dropdown.Item onClick={logout}>Logout</Dropdown.Item>
+                      <Dropdown.Item ><Link to={`/profile-info/${user.id}`}>UserProfile</Link></Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
 
                 </>
               )
