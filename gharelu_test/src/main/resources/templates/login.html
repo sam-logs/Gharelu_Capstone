@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gharelu: A Smart City | Login</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: rgb(238, 205, 200);
+        }
+
+        .container {
+            width: 100%;
+            display: flex;
+            max-width: 850px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .login {
+            width: 400px;
+        }
+
+        form {
+            width: 250px;
+            margin: 60px auto;
+        }
+
+        h1 {
+            margin: 20px;
+            text-align: center;
+            font-weight: bolder;
+            text-transform: uppercase;
+        }
+
+        p {
+            text-align: center;
+            margin: 10px;
+        }
+
+        hr {
+            border-top: 2px solid tomato;
+        }
+
+        .pic img {
+            width: 450px;
+            height: 100%;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        form label {
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 5px;
+        }
+
+        input {
+            width: 100%;
+            margin: 2px;
+            border: none;
+            outline: none;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+
+        button {
+            border: none;
+            outline: none;
+            padding: 8px;
+            width: 252px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+            background: tomato;
+        }
+
+        button:hover {
+            background: rgba(214, 86, 64, 1);
+        }
+
+        p {
+            margin: 20px;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="login">
+            <form th:action="@{/loginUser}" method="post"> 
+                <h1>Login</h1>
+                <hr>
+                <p>Explore the World!</p>
+                <label>Email</label>
+                <input type="text" name="email" placeholder="abc@exampl.com">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="enter your password!">
+                <button>Submit</button>
+                <p>
+                    <a href="#">Forgot Password?</a>
+                </p>
+                <p>
+                    <a th:href="@{/signUp}">Sign Up</a>
+                </p>
+            </form>
+        </div>
+        <div class="pic">
+            <img src="https://images.pexels.com/photos/101808/pexels-photo-101808.jpeg?auto=compress&cs=tinysrgb&w=600">
+        </div>
+    </div>
+
+</body>
+
+</html>
