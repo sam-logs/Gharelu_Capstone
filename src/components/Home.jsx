@@ -5,14 +5,12 @@ import Notification from './Notification'
 import Portfolio from './Portfolio'
 import Services from './Services'
 import About from './About'
-import Weather from './Weather'
 import Navbars from './Navbars'
 
 const Home = () => {
   return (
     <div>
         <Navbars/>
-        <Weather />
         <Notification/>
         <About />
         <Services/>

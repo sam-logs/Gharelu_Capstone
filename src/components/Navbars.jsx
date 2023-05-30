@@ -43,7 +43,7 @@ const Navbars = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="/">GHARELU</Navbar.Brand>
+        <Navbar.Brand href="/">BSRTC</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
 
@@ -54,11 +54,11 @@ const Navbars = () => {
                   <Nav className="me-auto">
                     <Nav.Link href="/home">Home</Nav.Link>
                   </Nav>
-                  <Nav.Link href="#portfolio">Events</Nav.Link>
+                  <Nav.Link href="#portfolio">Varities</Nav.Link>
                   <NavDropdown title="Services" id="collasible-nav-dropdown">
                     <NavDropdown.Item href="/transport">Transport</NavDropdown.Item>
-                    <NavDropdown.Item href="/translator"> Translator</NavDropdown.Item>
-                    <NavDropdown.Item href="/basic">Basic Aminities</NavDropdown.Item>
+                    <NavDropdown.Item href="/translator"> Airlines</NavDropdown.Item>
+                    <NavDropdown.Item href="/basic">Hotels</NavDropdown.Item>
                     <NavDropdown.Divider />
                   </NavDropdown>
                   <Dropdown>
@@ -67,9 +67,9 @@ const Navbars = () => {
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                      <Dropdown.Item >{user.email}</Dropdown.Item>
+                      {/* <Dropdown.Item >{user.username}</Dropdown.Item> */}
                       <Dropdown.Item onClick={logout}>Logout</Dropdown.Item>
-                      <Dropdown.Item ><Link to={`/profile-info/${user.id}`}>UserProfile</Link></Dropdown.Item>
+                      {/* <Dropdown.Item ><Link to={`/profile-info/${user.id}`}>UserProfile</Link></Dropdown.Item> */}
                     </Dropdown.Menu>
                   </Dropdown>
 

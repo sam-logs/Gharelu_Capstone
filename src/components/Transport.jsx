@@ -11,8 +11,6 @@ import {
   } from '@chakra-ui/react'
   import { FaLocationArrow, FaTimes ,FaBusAlt} from 'react-icons/fa'
   import {BsClockFill} from 'react-icons/bs'
-  
-  
   import {
     useJsApiLoader,
     GoogleMap,

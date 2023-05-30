@@ -15,11 +15,6 @@ function UpdateUser() {
         password: "",
         intrest: "",
       });
-    // const [name, setName] = useState("");
-    // const [email, setEmail] = useState("");
-    // const [mobile, setMobile] = useState("");
-    // const [password, setPassword] = useState("");
-    // const [intrest, setIntrest] = useState("");
 
     useEffect(() => {
         getUser(userId).then(data => {
@@ -48,14 +43,7 @@ function UpdateUser() {
     <h1>Update User Data  </h1>
     <table border="1" style={{ float: 'left' }}>
       <tbody>
-        <tr>
-          <td>ID</td>
-          <td>Name</td>
-          <td>Email</td>
-          <td>Mobile</td>
-          <td>Password</td>
-          <td>Intrests</td>
-        </tr>
+        
         {/* {
           user.map((item, i) =>
             <tr key={i}>

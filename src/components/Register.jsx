@@ -5,13 +5,12 @@ import { toast } from 'react-toastify';
 import Navbars from './Navbars';
 import { signUp } from './services/user.service';
 
+
 const Register = () => {
   const [data, setData] = useState({
-    name: "",
+    username: "",
     email: "",
-    mobile: "",
-    password: "",
-    intrest: "",
+    password: ""
   });
 
   const [error, setError] = useState({
@@ -28,11 +27,9 @@ const Register = () => {
   //reseting the form
   const resetData = () => {
     setData({
-      name: "",
+      username: "",
       email: "",
-      mobile: "",
-      password: "",
-      intrest: "",
+      password: ""
     });
   };
 
@@ -56,11 +53,10 @@ const Register = () => {
         console.log("success log");
         toast.success("User is registered successfully !! user id " + resp.id);
         setData({
-          name: "",
+          username: "",
           email: "",
-          mobile: "",
-          password: "",
-          intrest: "",
+          password: ""
+          
         });
       })
       .catch((error) => {
@@ -80,45 +76,22 @@ const Register = () => {
     <div className='flex flex-row justify-evenly bg-sky-200 items-center'>
       <img
         className="w-80 h-100 flex"
-        src="https://i.pinimg.com/originals/c0/6e/13/c06e1328d3bb16563d2f6a918921aeb0.png"
+        src="https://static.toiimg.com/photo/62414484.cms"
         alt="Your Company"
       />
       <Form className='w-80 mt-2  p-4 pb-0 border-solid border-2 border-indigo-600 m-2 ' onSubmit={submitForm}>
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter name" fullWidth
-            onChange={(e) => handleChange(e, "name")}
-            value={data.name}
+        <Form.Group className="mb-4" controlId="formBasicEmail">
+          <Form.Label>Username</Form.Label>
+          <Form.Control type="text" placeholder="Enter username" fullWidth
+            onChange={(e) => handleChange(e, "username")}
+            value={data.username}
             invalid={
               error.errors?.response?.data?.name ? true : false
             }
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Mobile Number</Form.Label>
-          <Form.Control type="text" placeholder="Enter MobileNo." fullWidth
-            onChange={(e) => handleChange(e, "mobile")}
-            value={data.mobile}
-            invalid={
-              error.errors?.response?.data?.mobile ? true : false
-            }
-          />
-        </Form.Group>
-        <Form.Select aria-label="Default select example" fullWidth onChange={(e) => handleChange(e, "intrest")}
-          value={data.intrest}
-          invalid={
-            error.errors?.response?.data?.about ? true : false
-          } >
-          <option>Choose Your Intrests </option>
-          <option value="Flats">Flats</option>
-          <option value="Hotels">Hotels</option>
-          <option value="Pubs">Pubs</option>
-          <option value="Betting">Betting</option>
-          <option value="Casino">Casino</option>
-          <option value="Racing">Racing</option>
-
-        </Form.Select>
+       
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" placeholder="Enter email" fullWidth

@@ -11,7 +11,7 @@ import { createContext, useReducer } from 'react';
 import { initialState, reducer } from './components/reducer/UseReducer';
 import Success from './components/Success';
 import ProfileInfo from './components/Profileinfo';
-import Translator from './components/Translate'
+
 import Privateroute from './components/Privateroute';
 import UserProvider from './UserProvider';
 import Transport from './components/Transport';
@@ -34,10 +34,9 @@ const Routing = () => {
           <Route path='/success' element={<Success />}></Route>
           <Route path='/profile-info/:userId' element={<ProfileInfo />} />
           <Route path='/user' element={<Privateroute />} />
-          <Route path='/translator' element={<Translator />} />
           <Route path='/transport' element={<Transport/>}/>
           <Route path='/basic' element={<Aminities/>}/>
-          <Route path='/update-user/:userId' element={<UpdateUser/>}/>
+          <Route path='/update-user/:userId' element={<UpdateUser/>}/> 
 
         </Routes>
       </Router>

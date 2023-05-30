@@ -19,6 +19,7 @@
     "bootstrap": "^4.6.2",
     "css-minimizer-webpack-plugin": "^4.2.2",
     "heroicons-react": "^1.4.1",
+    "mdb-react-ui-kit": "^6.0.0",
     "node-fetch": "^3.2.10",
     "node-sass": "^7.0.3",
     "postcss": "^8.4.18",

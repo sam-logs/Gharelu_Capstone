@@ -5,7 +5,7 @@ const Contact = () => {
     <div>
       
 
-<iframe class="items-center" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14009.408200602249!2d77.41652521985378!3d28.619209054899788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cee4abb9de49b%3A0x287a032bd7ff51f1!2sGaur%20City%202%2C%20Ghaziabad%2C%20Uttar%20Pradesh%20201009!5e0!3m2!1sen!2sin!4v1666332999901!5m2!1sen!2sin" width="1300" height="450" style={{border:0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+<iframe class="items-center" src="https://www.openrailwaymap.org/embed.php?lang=de&lat=51.20492060934307&lon=6.685309410095215&zoom=16&style=standard" width="1300" height="450" style={{border:0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
 
 
 <link rel="stylesheet" href="https://cdn.tailgrids.com/tailgrids-fallback.css" />
